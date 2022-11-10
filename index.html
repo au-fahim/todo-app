@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📝 Todo-App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="./icons/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+  </head>
+  <body>
+    <main class="main-body">
+      <header class="title-header">
+        <h1>Todo List</h1>
+        <p>What You Want Todo?</p>
+      </header>
+      <section class="todo-section">
+        <form class="todo-container">
+          <div class="todo-input-wrapper">
+            <input
+              type="text"
+              class="todo-input"
+              placeholder="Add What You Want To Do?"
+              required
+            />
+            <button class="todo-add-btn">
+              <i class="fi-rr-plus-small"></i>
+            </button>
+          </div>
+          <select class="filter-todo">
+            <option value="All">All</option>
+            <option value="Completed">Completed</option>
+            <option value="Uncompleted">Uncompleted</option>
+          </select>
+        </form>
+        <div class="todo-item-wrapper">
+          <ul class="todo-item-list">
+            <!-- <div class="todo">
+              <li class="todo-item">
+                Lorem ipsum adipisicing elit. Vero, dicta!
+              </li>
+              <div class="todo-complete-btn"><i class="fi-rr-check"></i></div>
+              <div class="todo-delete-btn"><i class="fi-rr-trash"></i></div>
+            </div> -->
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

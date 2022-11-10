@@ -70,18 +70,18 @@ function filterTodo(e) {
     // console.log(todo);
     switch (e.target.value) {
       case "all":
-        todo.style.display = "flex";
+        todo.style.display = "block";
         break;
       case "completed":
         if (todo.classList.contains("completed")) {
-          todo.style.display = "flex";
+          todo.style.display = "block";
         } else {
           todo.style.display = "none";
         }
         break;
       case "uncompleted":
         if (!todo.classList.contains("completed")) {
-          todo.style.display = "flex";
+          todo.style.display = "block";
         } else {
           todo.style.display = "none";
         }

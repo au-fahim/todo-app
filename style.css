@@ -34,6 +34,21 @@ body {
   font-family: var(--text-font);
 }
 
+.alert-msg {
+  position: fixed;
+  /* width: max-content; */
+  background: #f44336;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  transition: 0.6s ease;
+  box-shadow: -1px 1px 8px #f443368c;
+  cursor: pointer;
+  top: 7%;
+  right: -100%;
+  /* right: 3%; */
+}
+
 i {
   display: flex;
   pointer-events: none;
@@ -41,6 +56,7 @@ i {
 
 main.main-body {
   height: 100vh;
+  overflow-x: hidden;
 }
 
 header.title-header {
@@ -159,15 +175,16 @@ ul.todo-item-list {
 }
 
 .todo-item {
-  padding: 0.8rem;
+  flex: 1;
   float: left;
   width: 100%;
+  padding: 0.8rem;
   flex-wrap: wrap;
   line-height: 1.5;
-  flex: 1;
-  text-decoration: inherit;
   transition: 1s ease;
   text-align: justify;
+  text-decoration: inherit;
+  text-transform: capitalize;
 }
 
 .todo-complete-btn {

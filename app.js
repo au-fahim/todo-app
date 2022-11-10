@@ -4,6 +4,10 @@ const todoButton = document.querySelector(".todo-add-btn");
 const todoList = document.querySelector(".todo-item-list");
 const filterOption = document.querySelector(".filter-todo");
 
+const mainBody = document.querySelector(".main-body");
+
+const popupMsg = document.querySelector(".alert-msg");
+
 // Event Listeners
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
@@ -14,33 +18,42 @@ function addTodo(event) {
   // Prevent form from submitting
   event.preventDefault();
 
-  // Todo DIV
-  const todoDiv = document.createElement("div");
-  todoDiv.classList.add("todo");
+  if (todoInput.value == "") {
+    popupMsg.style.right = "3%";
+    popupMsg.innerHTML = "No Input Value Found!";
+    mainBody.appendChild(popupMsg);
+  } else {
+    // Remove Alert
+    popupMsg.style.right = "-100%";
 
-  // Create LI
-  const newTodo = document.createElement("li");
-  newTodo.innerHTML = todoInput.value;
-  newTodo.classList.add("todo-item");
-  todoDiv.appendChild(newTodo);
+    // Todo DIV
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
 
-  // Trash Button
-  const trashButton = document.createElement("div");
-  trashButton.innerHTML = '<i class="fi-rr-trash"></i>';
-  trashButton.classList.add("todo-delete-btn");
-  todoDiv.appendChild(trashButton);
+    // Create LI
+    const newTodo = document.createElement("li");
+    newTodo.innerHTML = todoInput.value;
+    newTodo.classList.add("todo-item");
+    todoDiv.appendChild(newTodo);
 
-  // Check Mark Button
-  const completeButton = document.createElement("div");
-  completeButton.innerHTML = '<i class="fi-rr-check"></i>';
-  completeButton.classList.add("todo-complete-btn");
-  todoDiv.appendChild(completeButton);
+    // Trash Button
+    const trashButton = document.createElement("div");
+    trashButton.innerHTML = '<i class="fi-rr-trash"></i>';
+    trashButton.classList.add("todo-delete-btn");
+    todoDiv.appendChild(trashButton);
 
-  // Append to List
-  todoList.appendChild(todoDiv);
+    // Check Mark Button
+    const completeButton = document.createElement("div");
+    completeButton.innerHTML = '<i class="fi-rr-check"></i>';
+    completeButton.classList.add("todo-complete-btn");
+    todoDiv.appendChild(completeButton);
 
-  // Clear todo input value
-  todoInput.value = "";
+    // Append to List
+    todoList.appendChild(todoDiv);
+
+    // Clear todo input value
+    todoInput.value = "";
+  }
 }
 
 function deleteCheck(e) {
